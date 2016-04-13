@@ -1,0 +1,21 @@
+
+body {
+    background-color: #eee;
+    font-family: Calibri, Arial, sans-serif;
+}
+
+#time {
+    width: 50%;
+    background: #ddd;
+    border: 2px solid #009afd;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    transition: .3s;
+    margin: 0 auto;
+}
+
+#time.pauseInterval {
+    border-color: red;
+}
+

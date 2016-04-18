@@ -5,6 +5,7 @@
     <title>Timer Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="typeahead.min.js"></script>
+    <script src="addPlayer.js"></script>
     <link rel="stylesheet" href="style.css">
     <!--<script src="timer.js"></script>-->
 
@@ -23,19 +24,36 @@
 
 <h1>Testarea</h1>
 
-<input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
+
+<input type="text" id="player_name" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
+    <input type="checkbox" name="sfbonus_button" value="unchecked" > Staff Bonus
+    <input type="checkbox" name="paid_button" value="0"> Paid
+
+    <button onclick="addPlayer()">Spieler Hinzufügen</button>
 
 
-<form>
-    Vorname:<br>
-    <input type="text" name="vorname"><br>
 
-    Nachname:<br>
-    <input type="text" name="nachname"><br><br>
-
-    <input type="submit" value="Hinzufügen">
-</form>
-
+#
+#
+<table id="players">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th colspan="2">Staff Bonus</th>
+        <th colspan="2">Paid</th>
+        <th colspan="2">Seat/Out</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+  <!--  <tr>
+        <td>Bill Gates</td>
+        <td colspan="2">        <input type="checkbox" name="sfbonus_switch">
+        </td>
+        <td colspan="2">        <input type="checkbox" name="paidswitch">
+        </td>
+        <td>Bill Gates</td>
+    </tr> -->
+</table>
 
 
 <div id="result"></div>

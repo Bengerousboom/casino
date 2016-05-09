@@ -1,72 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Timer Test</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="typeahead.min.js"></script>
-    <script src="addPlayer.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <!--<script src="timer.js"></script>-->
+    <title>Poker Tournament Blind Timer</title>
 
-    <script>
-        $(document).ready(function(){
-            $('input.typeahead').typeahead({
-                name: 'typeahead',
-                remote:'search.php?key=%QUERY',
-                limit : 10
-            });
-        });
-    </script>
+    <link href="http://fonts.googleapis.com/css?family=Roboto:900,300,700,400" rel="stylesheet"/>
+
+    <script src="js/time.js"></script>
+    <script src="js/JSON.tryParse.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+
+    <script src="js/timer.js"></script>
 
 </head>
-<body>
+<body ng-app="BlindTimer" ng-controller="TimerController">
 
-<h1>Testarea</h1>
-
-
-<input type="text" id="player_name" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Type your Query">
-    <input type="checkbox" name="sfbonus_button" value="unchecked" > Staff Bonus
-    <input type="checkbox" name="paid_button" value="0"> Paid
-
-    <button onclick="addPlayer()">Spieler Hinzufügen</button>
+RUNNNING: {{ elapsedTime }}
+Level: {{ currentLevelId+1 }}
+<h2>Running <span id="time-running">{{ timeRunning }}</span></h2>
+<div id="time-remaining" class="time-remaining">{{ timeRemainingInLevel }}</div>
+<div id="next-break" class="next-break">Next Break <span>{{ timeUntilNextBreak }}</span></div>
 
 
+<section class="tournament-buttons">
+    <button class="start" ng-click="startTournament()">Start Tournament</button>
+    <button class="reset" ng-click="resetTournament()">Reset Tournament</button>
+    <button class="pause" ng-click="pauseTournament()">Pause Tournament</button>
+</section>
 
-#
-#
-<table id="players">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th colspan="2">Staff Bonus</th>
-        <th colspan="2">Paid</th>
-        <th colspan="2">Seat/Out</th>
-    </tr>
-    </thead>
-    <tbody></tbody>
-  <!--  <tr>
-        <td>Bill Gates</td>
-        <td colspan="2">        <input type="checkbox" name="sfbonus_switch">
-        </td>
-        <td colspan="2">        <input type="checkbox" name="paidswitch">
-        </td>
-        <td>Bill Gates</td>
-    </tr> -->
-</table>
-
-
-<div id="result"></div>
-<!--
-<div id ="timer">
-
-    <span id="time"></span> Minutes </div>
-</br>
-
-    <button id="pause">Pause</button><br>
-
--->
-
-
+<br>
+<br>
+<h2>{{ current ? 'Current' : 'Next' }} Level</h2>
+<div class="blinds"><span class="small-blind">{{ level.small }}</span> / <span class="big-blind">{{ level.big }}</span></div>
+<div class="ante">Ante: <span class="ante-amount">{{ level.ante }}</span></div>
 </body>
 </html>

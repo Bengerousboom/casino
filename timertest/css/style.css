@@ -1,63 +1,208 @@
-body{
+body {
     margin: 0px;
     font-family: 'Catamaran', sans-serif;
+    overflow-y: hidden;
 }
-h3{
-    margin:0;
+
+ul {
+    list-style-type: none;
+    list-style-position: inside;
+    padding: 0;
 }
-input{
+
+li {
+    font-size: 20px;
+    border-bottom: 1px solid #5d5d5d;
+}
+
+li:last-child {
+    border: none;
+}
+
+.seatingRow {
+
+    display: table-cell;
+    padding-left: 60px;
+
+}
+
+h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+h4.seatTitle {
+    margin: 0;
+    font-size: 1.7em;
+}
+
+h3.optionhead {
+    margin: 0;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+input {
     outline: none;
 }
-.overlap{
-    position:relative;
-    top:120px;
+
+.overlap {
+    position: relative;
+    top: 120px;
 }
 
-.inputround{
+.middle{
+    position: relative;
+    /* text-align: center; */
+    float: left;
+    /* margin: 0 auto; */
+    bottom: 200px;
+    margin-left: 345px;
+}
+.btnPic{
+    opacity: 0.5;
+}
+#playBtn.opacUp{
+    opacity:1;
+    transition: opacity 1s ease-in-out;
+}
+#pauseBtn.opacUp{
+    opacity:1;
+    transition: opacity 1s ease-in-out;
+}
 
-    font-weight:300;
-    font-size:30px;
-    border-radius: 14px;
+.inputround {
+
+    font-weight: 300;
+    font-size: 30px;
+    border-radius: 20px;
     -moz-border-radius: 14px;
     -webkit-border-radius: 14px;
     border: 0px solid #ffffff;
     text-align: center;
     font-family: 'Catamaran', sans-serif;
 }
-input:focus{
-    border: 1px solid #92ff8a;
+
+.inputshort {
+    width: 160px;
 }
 
-.inputshort{
-    width: 96px;
+.inputmiddle {
+    width: 120px;
 }
 
-.inputmiddle{
-    width:75px;
+.inputlong {
+    width: 400px;
 }
 
-.inputlong{
-    width: 250px;
+.mainTourney {
+
+    text-align: center;
 }
 
-.leftcolumn{
-    float:left;
+.leftcolumn {
+    float: left;
     padding-left: 20px;
     padding-bottom: 20px;
 }
 
-
-.rightcolumn{
-    float:right;
+.rightcolumn {
+    float: right;
     padding-right: 20px;
     padding-bottom: 20px;
 }
-#rake{
-    width: 2em;
-    font-size:2em;
+
+.container {
+    position: relative;
 }
 
-div#turnierName{
+.textbox:hover {
+    opacity: 1;
+}
+
+.text {
+    padding-top: 50px;
+}
+
+.textbox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.64);
+    -webkit-box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+    box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.delBtn {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 25%;
+    float: right;
+    margin-right: 6%;
+    margin-top: 2px;
+    -webkit-border-radius: 7px;
+    opacity: 0.6;
+
+}
+
+.rebuyBtn {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 25%;
+    float: right;
+    margin-top: 2px;
+    margin-right: 5%;
+    opacity: 0.6;
+
+}
+
+.reStaffBtn {
+    -webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+    width: 25%;
+    float: right;
+    margin-top: 2px;
+    margin-right: 5%;
+    opacity: 0.6;
+}
+
+.delBtn:hover {
+    opacity: 1;
+}
+
+.rebuyBtn:hover {
+    opacity: 1;
+}
+
+.reStaffBtn:hover {
+    opacity: 1;
+}
+
+#title {
+    font-size: 5em;
+    color: white;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#seatingPart {
+    text-align: center;
+}
+
+#rake {
+    width: 72px;
+    font-size: 2em;
+}
+
+div#turnierName {
     padding-bottom: 10px;
 }
 
@@ -66,7 +211,9 @@ table {
     border-spacing: 0;
 }
 
-tbody, thead tr { display: block; }
+tbody, thead tr {
+    display: block;
+}
 
 tbody {
     height: 250px;
@@ -76,23 +223,29 @@ tbody {
 }
 
 tbody td, thead th {
-    width: 140px;
-    word-break: normal;
+    width: 160px;
+    word-break: break-all;
 }
-tr{
+
+tr {
     word-break: break-all;
     border: solid;
     border-width: 1px 0;
 }
+
 tr:first-child {
     border-top: none;
 }
+
 tr:last-child {
     border-bottom: none;
 }
-th{
+
+th {
     border: none;
+
 }
+
 table {
     border-collapse: collapse;
 }
@@ -101,179 +254,238 @@ thead th:last-child {
     width: 156px; /* 140px + 16px scrollbar width */
 }
 
-.form-group{
+.form-group {
     display: inline-flex;
 }
 
-.info-overlap{
-    position:relative;
-    bottom:200px;
+.info-overlap {
+    position: relative;
+    bottom: 90px;
 }
 
-.tournament-buttons{
+.tournament-buttons {
     position: absolute;
     bottom: 0;
-    left:500px;
+    left: 500px;
 }
-#backpic{
+
+#backpic {
     width: 100%;
     height: auto;
     position: fixed;
     z-index: -100;
     min-height: 100%;
 }
-#logo{
-    float:right;
-    width:15%;
+
+#logo {
+    float: right;
+    width: 15%;
     padding-right: 50px;
     padding-top: 50px;
 
 }
 
-#time-remaining{
-    display:inline-block;
+#time-remaining {
+    display: inline-block;
     color: white;
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    font-size: 15em;
-    color: rgba(255,255,255,1);
+    font-size: 19.9em;
+    color: rgba(255, 255, 255, 1);
     text-align: center;
     -o-text-overflow: clip;
     text-overflow: clip;
     white-space: pre;
-    text-shadow: 0 0 5px rgba(255,255,255,1);
-
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    padding-top: 20px;
 }
 
-#screentime{
+#screentime {
     text-align: center;
-    width:600px;
-    position:absolute;
-    left: 32%;
+    width: 800px;
+    position: absolute;
+    left: 26%;
 }
 
-#nextBreak{
+#nextBreak {
     display: inline;
     color: white;
 
 }
-.blinds{
-    float: left;
-    position:relative;
-    bottom:100px;
+
+.blinds {
+    position: relative;
+    bottom: 80px;
 }
 
-#levelID{
+.ante {
+
+    position: absolute;
+    width: 100%;
+}
+
+#antetext {
+    display: inline;
+    color: #e1e1e1;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    white-space: pre;
+    text-shadow: 0 0 5px rgb(223, 223, 223);
+    padding-right: 3.8em;
+    font-size: 2.5em;
+    padding-left: 20px;
+    font-weight: 300;
+
+}
+
+#anteamount {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    font-size: 4.5em;
+    float: left;
+    font-weight: 600;
+    text-align: left;
+    width:400px;
+}
+
+#nextAnte {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+    font-size: 4.5em;
+    float: right;
+    font-weight: 600;
+    text-align: right;
+    width:400px;
+}
+
+#levelID {
     color: white;
     font-family: 'Catamaran', sans-serif;
     font-weight: 200;
     white-space: pre;
-    text-shadow: 0 0 1px rgba(255,255,255,1);
+    text-shadow: 0 0 1px rgba(255, 255, 255, 1);
     opacity: 0.5;
-    float:left;
+    float: left;
     font-size: 4em;
 
 }
-#blindtext{
+
+#blindtext {
     display: inline;
     color: white;
     -o-text-overflow: clip;
     text-overflow: clip;
     white-space: pre;
-    text-shadow: 0 0 5px rgba(255,255,255,1);
-    padding-right: 1.5em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
     font-size: 3em;
-}
-#blindamounts{
 
-    color: white;
-    white-space: pre;
-    text-shadow: 0 0 5px rgba(255,255,255,1);
-    padding-right: 1.5em;
-    font-size: 3em;
 }
 
-#nextBlinds{
+#blindamounts {
     color: white;
-    white-space: pre;
-    text-shadow: 0 0 5px rgba(255,255,255,1);
-    opacity: 0.5;
-    font-size: 3em;
-}
-
-#left-info{
-    float:left;
-    color: white;
-    white-space: pre-line;
-    text-shadow: 0 0 1px rgba(255,255,255,1);
-    font-size: 1.4em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    font-size: 4.5em;
+    float: left;
+    font-weight: 600;
     text-align: left;
+    width:400px;
 }
 
-#right-info{
-    float:right;
+#nextBlinds {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    opacity: 0.5;
+    font-size: 4.55em;
+    float: right;
+    font-weight: 600;
+    text-align: right;
+    width:400px;
+}
+
+#left-info {
+    float: left;
     color: white;
     white-space: pre-line;
-    text-shadow: 0 0 1px rgba(255,255,255,1);
-    font-size: 1.4em;
-    text-align: right;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 1);
+    font-size: 1.6em;
+    text-align: left;
+    font-weight: normal;
+    width:400px;
 }
 
-#prizesheading{
+#right-info {
+    float: right;
     color: white;
-    text-shadow: 0 0 1px rgba(255,255,255,1);
-    font-size: 1.4em;
+    white-space: pre-line;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 1);
+    font-size: 1.6em;
+    text-align: right;
+    font-weight: 100;
+    width:400px;
 }
 
-#openMe{
+#prizesheading {
+    font-weight: 600;
+}
+
+#openMe {
     position: relative;
     top: 150px;
 }
 
-.form-inline{
-    text-align:center;
+#runningTime {
+    font-size: 0.5em;
+    padding-left: 300px;
 }
 
-label.labelname{
-    padding-right:20px;
+#playBtn:after{
+    opacity:0.5;
 }
 
-div.checkbox{
-    padding-left: 20px;
-}
-
-.wrapper{
+.form-inline {
     text-align: center;
 }
 
+label.labelname {
+    padding-right: 20px;
+}
+
+div.checkbox {
+    padding-left: 20px;
+}
+
+.wrapper {
+    text-align: center;
+}
 
 /* The side navigation menu */
 .sidenav {
-    height: 50%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
-    top: 80px;
+    top: 166px;
+    border-radius: 0px 20px 20px 0px;
     left: 0;
     background-color: rgb(207, 202, 202); /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
 .sidenav a {
-    /*padding: 8px 8px 8px 32px; */
+    padding: 20px 10px 10px 17px;
     text-decoration: none;
-    font-size: 15px;
     color: rgba(255, 255, 255, 0.98);
     display: block;
-    transition: 0.3s
+    transition: 0.5s;
+    border-bottom: 2px solid rgba(145, 145, 145, 0.49);
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #b0a6af;
+.sidenav a:hover, .offcanvas a:focus {
+    color: #ffffff;
+    background: white;
 }
 
 /* Position and style the close button (top right corner) */
@@ -293,8 +505,16 @@ div.checkbox{
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.navpic {
 }
 
 /*
@@ -305,12 +525,14 @@ MODAL-SETTINGS
     padding: 40px;
     text-align: center;
 }
+
 hr {
     clear: both;
     margin-top: 40px;
     border: 0;
     border-top: 1px solid #aaa;
 }
+
 h1 {
     font-size: 30px;
     margin-bottom: 40px;
@@ -331,14 +553,17 @@ h1 {
     transition: color .1s ease;
     /* top: 40em;*/
 }
+
 .btn:hover {
     background: #92440a;
 }
+
 .btn.btn-big {
     font-size: 18px;
     padding: 15px 20px;
     min-width: 100px;
 }
+
 .btn-close {
     color: #aaa;
     font-size: 30px;
@@ -347,9 +572,11 @@ h1 {
     right: 5px;
     top: 0;
 }
+
 .btn-close:hover {
     color: #919191;
 }
+
 .modal:before {
     content: "";
     display: none;
@@ -361,19 +588,22 @@ h1 {
     bottom: 0;
     z-index: 10;
 }
+
 .modal:target:before {
     display: block;
 }
+
 .modal:target .modal-dialog {
     -webkit-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
     top: 20%;
 }
+
 .modal-dialog {
     background: rgba(254, 254, 254, 0.84);
     border: #333 solid 1px;
-    border-radius: 5px;
+    border-radius: 20px;
     margin-left: -200px;
     position: fixed;
     left: 40%;
@@ -388,28 +618,36 @@ h1 {
     -o-transition: -o-transform 0.3s ease-out;
     transition: transform 0.3s ease-out;
 }
+
 .modal-body {
     padding: 20px;
 
 }
+
 .modal-header,
 .modal-footer {
     padding: 10px 20px;
 }
+
 .modal-header {
     border-bottom: #eee solid 1px;
     text-align: center;
 }
+
 .modal-header h2 {
     font-size: 20px;
 }
+
 .modal-footer {
     border-top: #eee solid 1px;
     text-align: right;
 }
+
 /*ADDED TO STOP SCROLLING TO TOP*/
 #close {
     display: none;
 }
+
+
 
 

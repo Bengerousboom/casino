@@ -64,10 +64,29 @@ function getEndOfLevelTime(levels, currentLevelId) {
 
 /* Set the width of the side navigation to 250px */
 function openNav() {
-  document.getElementById("mySidenav").style.width = "100px";
+  document.getElementById("mySidenav").style.width = "80px";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
+$(document).ready(function() {
+  $("#playBtn").click(function() {
+    $("#playBtn").toggleClass("opacUp");
+    if( $("#pauseBtn").hasClass("opacUp")){
+      $("#pauseBtn").toggleClass("opacUp");
+    }
+  });
+});
+
+$(document).ready(function() {
+  $("#pauseBtn").click(function() {
+    $("#pauseBtn").toggleClass("opacUp");
+    if(  $("#playBtn").hasClass("opacUp")){
+      $("#playBtn").toggleClass("opacUp");
+    }
+
+  });
+});

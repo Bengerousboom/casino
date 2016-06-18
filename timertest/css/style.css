@@ -63,6 +63,15 @@ input {
 .btnPic{
     opacity: 0.5;
 }
+
+.inputtable{
+    width: 30px;
+    font-weight: 300;
+    border-radius: 20px;
+    border: 0px solid #ffffff;
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+}
 #playBtn.opacUp{
     opacity:1;
     transition: opacity 1s ease-in-out;

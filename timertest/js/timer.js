@@ -37,48 +37,31 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             'seated': true
         }
     ];
-    /*
-     Timer-Level Controller
-     */
-    $scope.updateBlinds = function () {
-        if (!$scope.nextlevel.break) {
-            $scope.currentBB = $scope.currentLevel.big;
-            $scope.currentSB = $scope.currentLevel.small;
-            $scope.currentAnte = $scope.currentLevel.ante;
-            $scope.nextBB = $scope.nextLevel.big;
-            $scope.nextSB = $scope.nextLevel.small;
-            $scope.nextAnte = $scope.nextLevel.ante;
-        } else {
-            $scope.currentBB = $scope.currentLevel.big;
-            $scope.currentSB = $scope.currentLevel.small;
-            $scope.currentAnte = $scope.currentLevel.ante;
-            $scope.nextBB = "Break";
-            $scope.nextSB = "";
-            $scope.nextAnte = "";
 
-        }
-    };
+
+
 
 
     var tourneyInfoInterval = null;
-    $scope.entries = localStorage.playerCount;
+    $scope.entries = $scope.companies.length;
     $scope.staffAmount = localStorage.staffCount;
-    $scope.tName = "Default Tourney";
+    $scope.numberRound = 1;
+    $scope.tName = null;
     $scope.startingStack = 6000;
     $scope.staffStack = 2000;
     $scope.entryFee = 110;
-    $scope.amountR = 0;
-    $scope.stackR;
-    $scope.amountA;
-    $scope.stackA;
-
-    
+    $scope.amountR = null;
+    $scope.stackR = null;
+    $scope.amountA = null;
+    $scope.stackA = null;
+    $scope.tAddon = false;
+    $scope.tRebuy = false;
 
     $scope.playersIn = $scope.companies.length;
     $scope.totalPrize = $scope.entryFee * $scope.entries;
 
     $scope.prizePool = function () {
-        if ($scope.playersIn <= 25) {
+        if ($scope.entries <= 25) {
             $scope.firstPlace = "1st Place: " + Math.round($scope.totalPrize * 0.5) + "€";
             $scope.secondPlace = "2nd Place: " + Math.round($scope.totalPrize * 0.3) + "€";
             $scope.thirdPlace = "3rd Place: " + Math.round($scope.totalPrize * 0.2) + "€";
@@ -86,7 +69,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             $scope.fifthPlace = "";
             var roundPrizes = $scope.firstPlace + $scope.secondPlace + $scope.thirdPlace;
             $scope.roundedPrize = roundPrizes == $scope.totalPrize ? $scope.firstPlace -(roundPrizes-$scope.totalPrize) : $scope.totalPrize;
-        } else if ($scope.playersIn > 25 && $scope.playersIn <= 35) {
+        } else if ($scope.entries > 25 && $scope.entries <= 35) {
             $scope.firstPlace = "1st Place: " + Math.round($scope.totalPrize * 0.4) + "€";
             $scope.secondPlace = "2nd Place: " + Math.round($scope.totalPrize * 0.3) + "€";
             $scope.thirdPlace = "3rd Place: " + Math.round($scope.totalPrize * 0.2) + "€";
@@ -107,23 +90,6 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
 
     };
     $scope.prizePool();
-
-    $scope.updateInfo = function () {
-        if ($scope.playersIn != localStorage.playerCount || $scope.staffAmount != localStorage.staffCount) {
-            $scope.playersIn = localStorage.playerCount;
-            $scope.staffChips = $scope.staffAmount * $scope.staffStack;
-            $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
-            $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
-            $scope.totalPrize = $scope.entryFee * $scope.entries;
-            $scope.prizePool();
-        }
-    };
-    $scope.updateInfo();
-    tourneyInfoInterval = $interval($scope.updateInfo, 1000);
-
-    $scope.chipCount = $scope.playersIn * $scope.startingStack;
-    $scope.averageStack = $scope.chipCount / $scope.playersIn;
-
 
     $scope.levels = [
         {
@@ -146,7 +112,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
         },
         {
             break: true,
-            length: 480
+            length: 5
         },
         {
             small: 100,
@@ -180,11 +146,42 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             $scope.nextBB = "Break";
             $scope.nextSB = "";
             $scope.nextAnte = "";
-
         }
     };
     $scope.updateBlinds();
-    $scope.nextBreakTime = getNextBreakTime($scope.levels, $scope.currentLevelId);
+
+    $scope.updateInfo = function () {
+            $scope.playersIn = $scope.companies.length;
+            $scope.staffChips = $scope.staffAmount * $scope.staffStack;
+            $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
+            $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
+            $scope.totalPrize = $scope.entryFee * $scope.entries;
+        if($scope.amountA&&$scope.stackA!=null||""){
+            $scope.tAddon = true;
+        }else {
+            $scope.tAddon = false;
+        }
+
+        if($scope.amountR&&$scope.stackR!=null||""){
+            $scope.tRebuy = true;
+        } else {
+            $scope.tRebuy = false;
+        }
+
+        $scope.prizePool();
+        $scope.updateBlinds();
+    };
+    $scope.updateInfo();
+    tourneyInfoInterval = $interval($scope.updateInfo, 1000);
+
+    $scope.staffChips = $scope.staffAmount * $scope.staffStack;
+    $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
+    $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
+
+
+
+
+   // $scope.nextBreakTime = getNextBreakTime($scope.levels, $scope.currentLevelId);
     $scope.endOfLevelTime = getEndOfLevelTime($scope.levels, $scope.currentLevelId);
 
     var remainer = $scope.endOfLevelTime;
@@ -202,9 +199,15 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
         if(firstStart!=true){
             $scope.entries = $scope.companies.length;
             firstStart = true;
+            $scope.nextBreakTime = getNextBreakTime($scope.levels, $scope.currentLevelId);
+            $scope.endOfLevelTime = getEndOfLevelTime($scope.levels, $scope.currentLevelId);
+            remainer = $scope.endOfLevelTime;
+            breakTimer = $scope.nextBreakTime;
+
         }
 
         $scope.staffAmount = localStorage.staffCount;
+
     };
 
     $scope.onTimeout = function () {
@@ -217,7 +220,6 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             return;
         }
         if ($scope.currentLevel.break) {
-
             $scope.nextBreakTime = getNextBreakTime($scope.levels, $scope.currentLevelId + 1);
             breakTimer = $scope.nextBreakTime;
         } else {
@@ -234,6 +236,9 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.$on('levelComplete', function (event) {
         $scope.endOfLevelTime = getEndOfLevelTime($scope.levels, $scope.currentLevelId);
         remainer = $scope.endOfLevelTime;
+        if (!$scope.currentLevel.break) {
+            $scope.numberRound++;
+        }
         $scope.updateBlinds();
         $scope.onTimeout();
     });

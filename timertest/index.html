@@ -3,20 +3,19 @@
 <head>
     <title>Poker Tournament Blind Timer</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+    <script src="src/jquery_2.1.3_jquery.js"></script>
+    <script src="src/angularjs_1.5.5_angular.js"></script>
     <script src="js/time.js"></script>
     <script src="js/JSON.tryParse.js"></script>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,900,800,500,600,700' rel='stylesheet'
+        <link href=css/roboto.css' rel='stylesheet' type='text/css'>
+    <link href='css/catamaran.css' rel='stylesheet'
           type='text/css'>
     <script src="js/timer.js"></script>
 
 
 </head>
-<img id="backpic" src="CSS/images/bg.jpg" alt="">
-<img id="logo" src="CSS/images/logo.png" alt="">
+<img id="backpic" src="css/Images/bg.jpg" alt="">
+<img id="logo" src="css/Images/logo.png" alt="">
 <body ng-app="BlindTimer" ng-controller="TimerController">
 
 
@@ -148,13 +147,13 @@
                 </th>
             </tr>
             <tr ng-repeat="level in levels  | filter: searchKeyword | orderBy:orderByField:reverseSort">
-                <td>{{level.small}}
+                <td><input type="text" class="inputtable" ng-model="level.small" value="{{ level.small }}">
                 </td>
-                <td>{{level.big}}
+                <td><input type="text" class="inputtable" ng-model="level.big" value="{{ level.big }}">
                 </td>
-                <td>{{level.ante}}
+                <td><input type="text" class="inputtable" ng-model="level.ante" value="{{ level.ante }}">
                 </td>
-                <td>{{level.length}}
+                <td><input type="text" class="inputtable" ng-model="level.length" value="{{ level.length }}">
                 </td>
                 <td>
                     <input type="button" value="Remove" class="btn btn-primary" ng-click="removeLevel(level.small)"/>
@@ -226,7 +225,7 @@
                 </td>
                 <td><input type="checkbox" ng-model="company.staff">
                 </td>
-                <td>{{company.table}}-{{ company.seat }}
+                <td><input type="text" class="inputtable" value="{{company.table}}-{{ company.seat }}">
                 </td>
                 <td>
                     <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(company.name)"/>
@@ -325,7 +324,7 @@
 
 <section id="screentime" >
     <div id="title">{{tName}}</div>
-    <div id="levelID" class="overlap">ROUND {{ currentLevelId+1 }} <span id="runningTime">Next Break {{ breakIt }}</span></div>
+    <div id="levelID" class="overlap">ROUND {{ numberRound }} <span id="runningTime">Next Break {{ breakIt }}</span></div>
 
 
     <div id="time-remaining" class="night-hotel">{{ timeRemainingInLevel }}</div>
@@ -344,7 +343,9 @@
             <span class="prize">Chip Count: {{ chipCount }}</span>
             <span class="prize">Average Stack: {{averageStack }}</span>
             <span class="prize">Total Prizepool: {{ roundedPrize }} €</span>
-            <span class="prize">Running for: {{ elapsedTime }}</span>
+            <span class="prize" ng-show="tRebuy">Rebuys: {{ elapsedTime }}</span>
+            <span class="prize" ng-show="tAddon">Addons: {{ elapsedTime }}</span>
+            <!-- <span class="prize">Running for: {{ elapsedTime }}</span> -->
         </div>
     </div>
     <div id="right-info" class="info-overlap">

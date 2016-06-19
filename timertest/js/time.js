@@ -62,6 +62,12 @@ function getEndOfLevelTime(levels, currentLevelId) {
   return seconds;
 }
 
+
+
+
+
+
+
 /* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "80px";
@@ -90,3 +96,51 @@ $(document).ready(function() {
 
   });
 });
+
+function modalClose() {
+  if (location.hash == '#modal-one' || '#modal-two' || '#modal-three' || '#modal-four') {
+    location.hash = '#close';
+  }
+}
+
+document.addEventListener('keyup', function(e) {
+  if (e.keyCode == 27) {
+    modalClose();
+  }
+});
+
+window.onload=function() {
+  var modal = document.querySelector('#modal-one');
+  modal.addEventListener('click', function (e) {
+    modalClose();
+  }, false);
+  modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+  }, false);
+
+  var modal2 = document.querySelector('#modal-two');
+  modal2.addEventListener('click', function (e) {
+    modalClose();
+  }, false);
+  modal2.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+  }, false);
+
+  var modal3 = document.querySelector('#modal-three');
+  modal3.addEventListener('click', function (e) {
+    modalClose();
+  }, false);
+  modal3.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+  }, false);
+
+  var modal4 = document.querySelector('#modal-four');
+  modal4.addEventListener('click', function (e) {
+    modalClose();
+  }, false);
+  modal4.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+  }, false);
+
+}
+

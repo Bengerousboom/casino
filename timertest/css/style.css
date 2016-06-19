@@ -13,6 +13,8 @@ ul {
 li {
     font-size: 20px;
     border-bottom: 1px solid #5d5d5d;
+    text-align: left;
+    word-break: break-all;
 }
 
 li:last-child {
@@ -46,7 +48,9 @@ h3.optionhead {
 input {
     outline: none;
 }
-
+.tableNo{
+    font-weight: bold;
+}
 .overlap {
     position: relative;
     top: 120px;
@@ -106,8 +110,8 @@ input {
 }
 
 .mainTourney {
-
-    text-align: center;
+    padding-left: 20px;
+    text-align: left;
 }
 
 .leftcolumn {
@@ -124,6 +128,9 @@ input {
 
 .container {
     position: relative;
+}
+.transText:hover{
+    opacity:0;
 }
 
 .textbox:hover {
@@ -142,17 +149,14 @@ input {
     left: 0;
     opacity: 0;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, 0.64);
-    -webkit-box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
-    box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, .75);
-    -webkit-transition: all 0.7s ease;
+
     transition: all 0.7s ease;
 }
 
 .delBtn {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    width: 25%;
+    width: 26%;
     float: right;
     margin-right: 6%;
     margin-top: 2px;
@@ -304,7 +308,6 @@ thead th:last-child {
     text-align: center;
     -o-text-overflow: clip;
     text-overflow: clip;
-    white-space: pre;
     text-shadow: 0 0 5px rgba(255, 255, 255, 1);
     padding-top: 20px;
 }
@@ -333,19 +336,6 @@ thead th:last-child {
     width: 100%;
 }
 
-#antetext {
-    display: inline;
-    color: #e1e1e1;
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    white-space: pre;
-    text-shadow: 0 0 5px rgb(223, 223, 223);
-    padding-right: 3.8em;
-    font-size: 2.5em;
-    padding-left: 20px;
-    font-weight: 300;
-
-}
 
 #anteamount {
     color: white;
@@ -372,25 +362,12 @@ thead th:last-child {
     color: white;
     font-family: 'Catamaran', sans-serif;
     font-weight: 200;
-    white-space: pre;
     text-shadow: 0 0 1px rgba(255, 255, 255, 1);
     opacity: 0.5;
     float: left;
     font-size: 4em;
 
 }
-
-#blindtext {
-    display: inline;
-    color: white;
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    white-space: pre;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 1);
-    font-size: 3em;
-
-}
-
 #blindamounts {
     color: white;
     text-shadow: 0 0 5px rgba(255, 255, 255, 1);
@@ -415,7 +392,6 @@ thead th:last-child {
 #left-info {
     float: left;
     color: white;
-    white-space: pre-line;
     text-shadow: 0 0 1px rgba(255, 255, 255, 1);
     font-size: 1.6em;
     text-align: left;
@@ -426,7 +402,6 @@ thead th:last-child {
 #right-info {
     float: right;
     color: white;
-    white-space: pre-line;
     text-shadow: 0 0 1px rgba(255, 255, 255, 1);
     font-size: 1.6em;
     text-align: right;
@@ -563,8 +538,24 @@ h1 {
     /* top: 40em;*/
 }
 
+.removeBtn{
+    border: none;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    min-width: 60px;
+    position: relative;
+    font-family:Catamaran;
+    transition: color .1s ease;
+}
+.removeBtn:hover {
+    color: #5d5d5d;
+}
+
+
 .btn:hover {
-    background: #92440a;
+    background: #5d5d5d;
 }
 
 .btn.btn-big {
@@ -638,13 +629,23 @@ h1 {
     padding: 10px 20px;
 }
 
-.modal-header {
-    border-bottom: #eee solid 1px;
-    text-align: center;
-}
 
 .modal-header h2 {
-    font-size: 20px;
+    font-size: 25px;
+    /* font-family: catamaran; */
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.modal-header {
+    border-bottom: #eee solid 1px;
+    text-align: left;
+    color: #2e2e2e;
+    background-color: #F9F9F9;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 3px lightgray;
+
 }
 
 .modal-footer {
@@ -652,10 +653,14 @@ h1 {
     text-align: right;
 }
 
+
+
 /*ADDED TO STOP SCROLLING TO TOP*/
 #close {
     display: none;
 }
+
+
 
 
 

@@ -35,6 +35,286 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             'table': '1',
             'seat': '2',
             'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'Aeter Deier',
+            'paid': true,
+            'staff': true,
+            'table': '3',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'Deter Ceier',
+            'paid': false,
+            'staff': true,
+            'table': '1',
+            'seat': '3',
+            'seated': false
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
+        },
+        {
+            'name': 'FEST',
+            'paid': true,
+            'staff': true,
+            'table': '1',
+            'seat': '2',
+            'seated': true
         }
     ];
 
@@ -60,34 +340,54 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.playersIn = $scope.companies.length;
     $scope.totalPrize = $scope.entryFee * $scope.entries;
 
+
     $scope.prizePool = function () {
         if ($scope.entries <= 25) {
-            $scope.firstPlace = "1st Place: " + Math.round($scope.totalPrize * 0.5) + "€";
-            $scope.secondPlace = "2nd Place: " + Math.round($scope.totalPrize * 0.3) + "€";
-            $scope.thirdPlace = "3rd Place: " + Math.round($scope.totalPrize * 0.2) + "€";
+            $scope.firstPlace = Math.round($scope.totalPrize * 0.42);
+            $scope.secondPlace = Math.round($scope.totalPrize * 0.25);
+            $scope.thirdPlace = Math.round($scope.totalPrize * 0.15);
             $scope.fourthPlace = "";
             $scope.fifthPlace = "";
             var roundPrizes = $scope.firstPlace + $scope.secondPlace + $scope.thirdPlace;
-            $scope.roundedPrize = roundPrizes == $scope.totalPrize ? $scope.firstPlace -(roundPrizes-$scope.totalPrize) : $scope.totalPrize;
+            if(roundPrizes != $scope.totalPrize){
+                var errorRound = roundPrizes-$scope.totalPrize;
+                //console.log(errorRound);
+                $scope.firstPlace -= errorRound;
+                $scope.roundedPrize =  roundPrizes- errorRound;
+            } else {
+                $scope.roundedPrize =  roundPrizes;
+            }
         } else if ($scope.entries > 25 && $scope.entries <= 35) {
-            $scope.firstPlace = "1st Place: " + Math.round($scope.totalPrize * 0.4) + "€";
-            $scope.secondPlace = "2nd Place: " + Math.round($scope.totalPrize * 0.3) + "€";
-            $scope.thirdPlace = "3rd Place: " + Math.round($scope.totalPrize * 0.2) + "€";
-            $scope.fourthPlace = "4th Place: " + Math.round($scope.totalPrize * 0.1)+ "€";
+            $scope.firstPlace = Math.round($scope.totalPrize * 0.42);
+            $scope.secondPlace = Math.round($scope.totalPrize * 0.25);
+            $scope.thirdPlace = Math.round($scope.totalPrize * 0.15);
+            $scope.fourthPlace = Math.round($scope.totalPrize * 0.1);
             $scope.fifthPlace = "";
             var roundPrizes = $scope.firstPlace + $scope.secondPlace + $scope.thirdPlace + $scope.fourthPlace;
-            $scope.roundedPrize = roundPrizes == $scope.totalPrize ? $scope.firstPlace -(roundPrizes-$scope.totalPrize) : $scope.totalPrize;
+            if(roundPrizes != $scope.totalPrize){
+                var errorRound = roundPrizes-$scope.totalPrize;
+                //console.log(errorRound);
+                $scope.firstPlace -= errorRound;
+                $scope.roundedPrize =  roundPrizes- errorRound;
+            } else {
+                $scope.roundedPrize =  roundPrizes;
+            }
         } else {
-            $scope.firstPlace = "1st Place: " + Math.round($scope.totalPrize * 0.42) + "€";
-            $scope.secondPlace = "2nd Place: " + Math.round($scope.totalPrize * 0.25) + "€";
-            $scope.thirdPlace = "3rd Place: " + Math.round($scope.totalPrize * 0.15) + "€";
-            $scope.fourthPlace = "4th Place: " + Math.round($scope.totalPrize * 0.1) + "€";
-            $scope.fifthPlace = "5th Place: " + Math.round($scope.totalPrize * 0.08) + "€";
+            $scope.firstPlace = Math.round($scope.totalPrize * 0.42);
+            $scope.secondPlace = Math.round($scope.totalPrize * 0.25);
+            $scope.thirdPlace = Math.round($scope.totalPrize * 0.15);
+            $scope.fourthPlace = Math.round($scope.totalPrize * 0.1);
+            $scope.fifthPlace = Math.round($scope.totalPrize * 0.08);
             var roundPrizes = $scope.firstPlace + $scope.secondPlace + $scope.thirdPlace + $scope.fourthPlace + $scope.fifthPlace;
-            $scope.roundedPrize = roundPrizes == $scope.totalPrize ? $scope.firstPlace -(roundPrizes-$scope.totalPrize) : $scope.totalPrize;
+            if(roundPrizes != $scope.totalPrize){
+                var errorRound = roundPrizes-$scope.totalPrize;
+                //console.log(errorRound);
+                $scope.firstPlace -= errorRound;
+                $scope.roundedPrize =  roundPrizes- errorRound;
+            } else {
+                $scope.roundedPrize =  roundPrizes;
+            }
         }
-
-
     };
     $scope.prizePool();
 
@@ -95,13 +395,13 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
         {
             small: 20,
             big: 40,
-            ante: 100,
+            ante: 0,
             length: 2
         },
         {
             small: 40,
             big: 80,
-            ante:2000,
+            ante:0,
             length: 2
         },
         {
@@ -117,7 +417,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
         {
             small: 100,
             big: 200,
-            ante: 0,
+            ante: 200,
             length: 10
         },
         {
@@ -151,23 +451,28 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.updateBlinds();
 
     $scope.updateInfo = function () {
-            $scope.playersIn = $scope.companies.length;
-            $scope.staffChips = $scope.staffAmount * $scope.staffStack;
-            $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
-            $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
-            $scope.totalPrize = $scope.entryFee * $scope.entries;
-        if($scope.amountA&&$scope.stackA!=null||""){
+        if ($scope.amountA && $scope.stackA != null || "") {
             $scope.tAddon = true;
-        }else {
+        } else {
             $scope.tAddon = false;
         }
 
-        if($scope.amountR&&$scope.stackR!=null||""){
+        if ($scope.amountR && $scope.stackR != null || "") {
             $scope.tRebuy = true;
         } else {
             $scope.tRebuy = false;
         }
 
+        $scope.playersIn = $scope.companies.length;
+        $scope.staffChips = $scope.staffAmount * $scope.staffStack;
+        $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
+        $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
+        $scope.totalPrize = $scope.entryFee * $scope.entries;
+        $(document).ready(function() {
+            if($scope.nextAnte||$scope.currentAnte != 0){
+                $(".info-overlap").css("bottom", "20px");
+            }
+        });
         $scope.prizePool();
         $scope.updateBlinds();
     };
@@ -177,6 +482,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.staffChips = $scope.staffAmount * $scope.staffStack;
     $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
     $scope.averageStack = Math.round($scope.chipCount / $scope.playersIn);
+
 
 
 
@@ -302,7 +608,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
 
     };
 
-    var tableAmount = 1;
+    $scope.tableAmount = 1;
     $scope.assignSeats = function () {
 
         var tableSize = 0;
@@ -321,7 +627,7 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             }
 
         }
-        tableAmount = tableSize;
+        $scope.tableAmount = tableSize;
         var playerRandom = [];
 
         for (p = 0; p <= $scope.companies.length; p++) {
@@ -398,6 +704,8 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
         $scope.companies.splice(index, 1);
     };
 
+
+
     $scope.removeLevel = function (sb) {
         var index = -1;
         var comArr = eval($scope.levels);
@@ -429,5 +737,4 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
 window.onbeforeunload = function() {
     return "Das aktuelle Turnier wird dadurch gelöscht. Wirklich neu laden?";
 };
-
 

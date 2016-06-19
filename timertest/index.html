@@ -7,7 +7,7 @@
     <script src="src/angularjs_1.5.5_angular.js"></script>
     <script src="js/time.js"></script>
     <script src="js/JSON.tryParse.js"></script>
-        <link href=css/roboto.css' rel='stylesheet' type='text/css'>
+    <link href='css/roboto.css' rel='stylesheet' type='text/css'>
     <link href='css/catamaran.css' rel='stylesheet'
           type='text/css'>
     <script src="js/timer.js"></script>
@@ -49,8 +49,6 @@
                        ng-model="entryFee"/>
                 <input type="text" title="Starting Stack" class="inputround inputshort" name="name" placeholder="Stack"
                        ng-model="startingStack"/>
-                <input type="text" class="inputround" id="rake" name="name" placeholder="Rake"
-                       ng-model="rake"/>
             </div>
             </div>
 
@@ -86,10 +84,6 @@
 
         </div>
 
-        <br><br><br>
-        <div class="modal-footer">
-            <a href="#close" class="btn">Close</a>  <!--CHANGED TO "#close"-->
-        </div>
     </div>
 </div>
 
@@ -134,7 +128,7 @@
 
         <table class="tableSection">
             <tr>
-                <th><a href="" ng-click="orderByField='name'; reverseSort = !reverseSort">Small Blind</a>
+                <th>Small Blind</a>
                 </th>
                 <th>Big Blind
                 </th>
@@ -156,13 +150,10 @@
                 <td><input type="text" class="inputtable" ng-model="level.length" value="{{ level.length }}">
                 </td>
                 <td>
-                    <input type="button" value="Remove" class="btn btn-primary" ng-click="removeLevel(level.small)"/>
+                    <input type="button" value="Remove" class="removeBtn" ng-click="removeLevel(level.small)"/>
                 </td>
             </tr>
         </table>
-        <div class="modal-footer">
-            <a href="#close" class="btn">Close</a>  <!--CHANGED TO "#close"-->
-        </div>
         </div>
 
 
@@ -228,7 +219,7 @@
                 <td><input type="text" class="inputtable" value="{{company.table}}-{{ company.seat }}">
                 </td>
                 <td>
-                    <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(company.name)"/>
+                    <input type="button" value="Remove" class="removeBtn" ng-click="removeRow(company.name)"/>
                 </td>
             </tr>
         </table>
@@ -242,9 +233,6 @@
                    ng-click="clearSeats()"/>
         </div>
 
-        <div class="modal-footer">
-            <a href="#close" class="btn">Close</a>  <!--CHANGED TO "#close"-->
-        </div>
     </div>
 
 
@@ -263,7 +251,7 @@
             <div class="seatingRow">
                 <h4 class="seatTitle">Table 1</h4>
                 <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '1' } | orderBy: 'seat'">{{company.name}}: {{company.seat}}
+                    <li class="container" ng-repeat="company in companies | filter: { table: '1' } | orderBy: 'seat'"><span class="transText"><span class="tableNo">{{company.seat}}</span> {{company.name}}</span>
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
@@ -276,7 +264,7 @@
             <div class="seatingRow" ng-show="tableAmount>=1">
                 <h4 class="seatTitle">Table 2</h4>
                 <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '2' } | orderBy: 'seat'">{{company.name}}: {{company.seat}}
+                    <li class="container" ng-repeat="company in companies | filter: { table: '2' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
 
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
@@ -288,7 +276,7 @@
             <div class="seatingRow" ng-show="tableAmount>=2">
                 <h4 class="seatTitle">Table 3</h4>
                 <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '3' } | orderBy: 'seat'">{{company.name}}: {{company.seat}}
+                    <li class="container" ng-repeat="company in companies | filter: { table: '3' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
@@ -296,10 +284,10 @@
                         </div></li>
                 </ul>
             </div>
-            <div class="seatingRow" ng-show="tableAmount<=3">
+            <div class="seatingRow" ng-show="tableAmount>=3">
                 <h4 class="seatTitle">Table 4</h4>
                 <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '4' } | orderBy: 'seat'">{{company.name}}: {{company.seat}}
+                    <li class="container" ng-repeat="company in companies | filter: { table: '4' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
@@ -314,62 +302,53 @@
 
         </div>
 
-
-        <div class="modal-footer">
-            <a href="#close" class="btn">Close</a>  <!--CHANGED TO "#close"-->
-        </div>
     </div>
 
 </div>
 
-<section id="screentime" >
+<section id="screentime">
     <div id="title">{{tName}}</div>
-    <div id="levelID" class="overlap">ROUND {{ numberRound }} <span id="runningTime">Next Break {{ breakIt }}</span></div>
-
+    <div id="levelID" class="overlap">ROUND {{ numberRound }} <span id="runningTime">Next Break {{ breakIt }}</span>
+    </div>
 
     <div id="time-remaining" class="night-hotel">{{ timeRemainingInLevel }}</div>
 
     <div class="blinds">
-       <span id="blindamounts">{{ currentSB }}/{{ currentBB }}</span><span id="nextBlinds"> {{ nextSB }}/{{ nextBB }}</span>
+        <span id="blindamounts">{{ currentSB }}/{{ currentBB }}</span><span
+            id="nextBlinds"> {{ nextSB }}/{{ nextBB }}</span>
     </div>
-    <div class="ante">
+    <div class="ante" ng-show="nextAnte || currentAnte != 0">
         <span id="anteamount">{{ currentAnte }}</span><span id="nextAnte">{{ nextAnte }}</span>
     </div>
-
     <div id="left-info" class="info-overlap">
         <div class="prizeinfo">
-            <span class="prize">Entries:  {{ entries }}</span>
-            <span class="prize">Players In:  {{ playersIn }}</span>
-            <span class="prize">Chip Count: {{ chipCount }}</span>
-            <span class="prize">Average Stack: {{averageStack }}</span>
-            <span class="prize">Total Prizepool: {{ roundedPrize }} €</span>
-            <span class="prize" ng-show="tRebuy">Rebuys: {{ elapsedTime }}</span>
-            <span class="prize" ng-show="tAddon">Addons: {{ elapsedTime }}</span>
-            <!-- <span class="prize">Running for: {{ elapsedTime }}</span> -->
+            <span class="prize">Entries:  {{ entries }}</span><br>
+            <span class="prize">Players In:  {{ playersIn }}</span><br>
+            <span class="prize">Chip Count: {{ chipCount }}</span><br>
+            <span class="prize">Average Stack: {{averageStack }}</span><br>
+            <span class="prize">Total Prizepool: {{ roundedPrize }} €</span><br>
+            <span class="prize" ng-show="tRebuy">Rebuys: {{ elapsedTime }}</span><br>
+            <span class="prize" ng-show="tAddon">Addons: {{ elapsedTime }}</span><br>
         </div>
     </div>
     <div id="right-info" class="info-overlap">
         <div class="prizeinfo">
-            <span id="prizesheading">PRIZES</span>
-            <span class="prizesmall">{{ firstPlace }}</span>
-            <span class="prize">{{ secondPlace }}</span>
-            <span class="prize">{{ thirdPlace }}</span>
-            <span class="prize">{{ fourthPlace }}</span>
-            <span class="prize">{{ fifthPlace }}</span>
+            <span id="prizesheading">PRIZES</span><br>
+            <span class="prizesmall">1st Place: {{ firstPlace }}€</span><br>
+            <span class="prize">2nd Place: {{secondPlace }}€</span><br>
+            <span class="prize">3rd Place: {{ thirdPlace }}€</span><br>
+            <span class="prize" ng-show="fourthPlace != 0">4th Place: {{ fourthPlace }}€</span><br>
+            <span class="prize" ng-show="fifthPlace != 0">5th Place: {{ fifthPlace }}€</span><br>
         </div>
-
-
     </div>
-
 
 
     <div class="middle">
-        <img class="btnPic" id="playBtn" src="css/Images/play.png"  ng-click="startTournament()">
+        <img class="btnPic" id="playBtn" src="css/Images/play.png" ng-click="startTournament()">
         <img class="btnPic" id="pauseBtn" src="css/Images/pause.png" ng-click="pauseTournament()">
-<br>
+        <br>
         <button class="reset" ng-click="resetTournament()">Reset Tournament</button>
     </div>
-
 
 
 </section>

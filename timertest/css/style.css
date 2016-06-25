@@ -22,9 +22,9 @@ li:last-child {
 }
 
 .seatingRow {
-
+    width: 150px;
     display: table-cell;
-    padding-left: 60px;
+    padding-left: 20px;
 
 }
 
@@ -37,6 +37,8 @@ h3 {
 h4.seatTitle {
     margin: 0;
     font-size: 1.7em;
+    font-weight:500;
+    text-align: left;
 }
 
 h3.optionhead {
@@ -61,37 +63,49 @@ input {
     /* text-align: center; */
     float: left;
     /* margin: 0 auto; */
-    bottom: 200px;
-    margin-left: 345px;
 }
 .btnPic{
-    opacity: 0.5;
+    opacity: 0.1;
+    transition: opacity 1s ease-in-out;
+}
+
+.btnPic:hover{
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
 }
 
 .inputtable{
     width: 30px;
     font-weight: 300;
-    border-radius: 20px;
-    border: 0px solid #ffffff;
+    border-radius: 5px;
+    border: 0px solid rgba(93, 93, 93, 0);
     text-align: center;
     font-family: 'Catamaran', sans-serif;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
-#playBtn.opacUp{
-    opacity:1;
-    transition: opacity 1s ease-in-out;
+#pauseBtn{
+    display: none;
 }
-#pauseBtn.opacUp{
-    opacity:1;
-    transition: opacity 1s ease-in-out;
-}
-
 .inputround {
 
     font-weight: 300;
     font-size: 30px;
-    border-radius: 20px;
-    -moz-border-radius: 14px;
-    -webkit-border-radius: 14px;
+    border-radius: 5px;
+    border: 0px solid #ffffff;
+    text-align: center;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#checkPause{
+ padding-top:5px;
+}
+
+.inputBlinds{
+    font-weight: 300;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 5px;
     border: 0px solid #ffffff;
     text-align: center;
     font-family: 'Catamaran', sans-serif;
@@ -129,13 +143,7 @@ input {
 .container {
     position: relative;
 }
-.transText:hover{
-    opacity:0;
-}
 
-.textbox:hover {
-    opacity: 1;
-}
 
 .text {
     padding-top: 50px;
@@ -149,16 +157,19 @@ input {
     left: 0;
     opacity: 0;
     border-radius: 20px;
+    transition: all 0.3s ease;
+}
 
-    transition: all 0.7s ease;
+.transText{
+    transition: all 0.3s ease;
 }
 
 .delBtn {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    width: 26%;
+    width: 28px;
     float: right;
-    margin-right: 6%;
+    margin-right: 7%;
     margin-top: 2px;
     -webkit-border-radius: 7px;
     opacity: 0.6;
@@ -168,10 +179,10 @@ input {
 .rebuyBtn {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    width: 25%;
+    width: 28px;
     float: right;
     margin-top: 2px;
-    margin-right: 5%;
+    margin-right: 7%;
     opacity: 0.6;
 
 }
@@ -179,10 +190,10 @@ input {
 .reStaffBtn {
     -webkit-transition: all 0.7s ease;
     transition: all 0.7s ease;
-    width: 25%;
+    width: 28px;
     float: right;
     margin-top: 2px;
-    margin-right: 5%;
+    margin-right: 7%;
     opacity: 0.6;
 }
 
@@ -208,6 +219,7 @@ input {
 
 #seatingPart {
     text-align: center;
+    font-family: Catamaran;
 }
 
 #rake {
@@ -405,7 +417,6 @@ thead th:last-child {
     text-shadow: 0 0 1px rgba(255, 255, 255, 1);
     font-size: 1.6em;
     text-align: right;
-    font-weight: 100;
     width:400px;
 }
 
@@ -432,7 +443,9 @@ thead th:last-child {
 }
 
 label.labelname {
+    padding-top: 10px;
     padding-right: 20px;
+    font-weight: bold;
 }
 
 div.checkbox {
@@ -441,6 +454,7 @@ div.checkbox {
 
 .wrapper {
     text-align: center;
+    padding-bottom: 15px;
 }
 
 /* The side navigation menu */
@@ -498,7 +512,11 @@ div.checkbox {
     }
 }
 
-.navpic {
+#menuOpen {
+    float: left;
+    width: 80px;
+    height: 324px;
+    margin-top: 166px;
 }
 
 /*
@@ -523,10 +541,9 @@ h1 {
 }
 
 .btn {
-    background: #817e80;
-    border: #e2dfdd solid 1px;
-    border-radius: 3px;
-    color: #fff;
+    border: none;
+    background: none;
+    font-family: Roboto;
     display: inline-block;
     font-size: 14px;
     padding: 8px 15px;
@@ -537,9 +554,13 @@ h1 {
     transition: color .1s ease;
     /* top: 40em;*/
 }
+.btn:hover {
+    color: #5d5d5d;
+}
 
 .removeBtn{
     border: none;
+    background: none;
     display: inline-block;
     font-size: 14px;
     text-decoration: none;
@@ -554,9 +575,7 @@ h1 {
 }
 
 
-.btn:hover {
-    background: #5d5d5d;
-}
+
 
 .btn.btn-big {
     font-size: 18px;
@@ -569,7 +588,7 @@ h1 {
     font-size: 30px;
     text-decoration: none;
     position: absolute;
-    right: 5px;
+    right: 15px;
     top: 0;
 }
 
@@ -609,6 +628,7 @@ h1 {
     left: 40%;
     top: -80%;
     z-index: 11;
+    font-family: Roboto;
     width: 768px;
     -webkit-transform: translate(0, -500%);
     -ms-transform: translate(0, -500%);
@@ -632,7 +652,7 @@ h1 {
 
 .modal-header h2 {
     font-size: 25px;
-    /* font-family: catamaran; */
+    font-family: catamaran;
     margin-bottom: 10px;
     margin-top: 10px;
     padding-left: 20px;

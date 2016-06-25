@@ -20,14 +20,14 @@
 
 
 
-<div id="mySidenav" class="sidenav" onmousewheel="closeNav()">
+<div id="mySidenav" class="sidenav" mouseleave="closeNav()">
     <a href="#modal-one"><img class="navpic" src="css/Images/options.png"></a>
     <a href="#modal-two"><img class="navpic" src="css/Images/Jeton.png"></a>
     <a href="#modal-three"><img class="navpic" src="css/Images/Player.png"></a>
     <a href="#modal-four"><img class="navpic" src="css/Images/tisch.png"></a>
 </div>
 <!-- Use any element to open the sidenav -->
-<span onmouseover="openNav()" id="openMe">open Nav</span>
+<div id="menuOpen"onmouseover="openNav()"></div>
 
 <!-- Modal -->
 <div class="modal" id="modal-one" aria-hidden="true">
@@ -98,20 +98,20 @@
                 <div class="form-group">
 
                     <div class="col-md-4">
-                        <input type="text" class="inputround inputmiddle" name="small" placeholder="Small Blind"
+                        <input type="text" class="inputBlinds inputmiddle" name="small" placeholder="Small Blind"
                                ng-model="small"/>
                     </div>
                     <div class="blindtable">
-                        <input type="text" class="inputround inputmiddle" placeholder="Big Blind" value="" ng-model="big"></label>
+                        <input type="text" class="inputBlinds inputmiddle" placeholder="Big Blind" value="" ng-model="big"></label>
                     </div>
                     <div class="blindtable">
-                    <input type="text" class="inputround inputshort" placeholder="Ante" value="" ng-model="ante">
+                    <input type="text" class="inputBlinds inputshort" placeholder="Ante" value="" ng-model="ante">
                 </div>
                     <div class="blindtable">
-                        <input type="text" class="inputround inputmiddle" placeholder="Length" value="" ng-model="length">
+                        <input type="text" class="inputBlinds inputmiddle" placeholder="Length" value="" ng-model="length">
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" ng-model="breakbool">Pause?</label>
+                    <div class="checkbox" id="checkPause">
+                        <label><input type="checkbox" style="padding-top: 5px;"value="" ng-model="breakbool">Pause?</label>
                     </div>
                     <div class="form-group">
                         <div style="padding-left:20px">
@@ -134,7 +134,7 @@
                 </th>
                 <th>Ante
                 </th>
-                <th>Länge</a>
+                <th>Length</a>
                 </th>
                 <th>
                     Entfernen
@@ -177,16 +177,16 @@
                                ng-model="name"/>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="" ng-model="paid">Bezahlt</label>
+                        <label><input type="checkbox" value="" ng-model="paid"><br>Bezahlt</label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="" ng-model="staff">Staff-Bonus</label>
+                        <label><input type="checkbox" value="" ng-model="staff"><br>Staff-Bonus</label>
                     </div>
-                    <div class="form-group">
+                 <!--   <div class="form-group">
                         <div style="padding-left:20px">
                             <input type="submit" value="Bestätigen" class="btn btn-primary"/>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
 
@@ -227,8 +227,6 @@
         <div class="wrapper">
             <input type="button" value="Plätze zuweisen" style="text-align:center" class="btn btn-primary"
                    ng-click="assignSeats()"/>
-        </div>
-        <div class="wrapper">
             <input type="button" value="Plätze Löschen" style="text-align:center" class="btn btn-primary"
                    ng-click="clearSeats()"/>
         </div>
@@ -250,22 +248,20 @@
     <div id="seatingPart">
             <div class="seatingRow">
                 <h4 class="seatTitle">Table 1</h4>
-                <ul >
+                <ul>
                     <li class="container" ng-repeat="company in companies | filter: { table: '1' } | orderBy: 'seat'"><span class="transText"><span class="tableNo">{{company.seat}}</span> {{company.name}}</span>
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
                             <input type="image" src="css/Images/rebuystaff.png" name="saveForm" class="reStaffBtn" ng-click="reStaffPlayer(company.name)" />
                         </div>
-
                     </li>
                 </ul>
             </div>
-            <div class="seatingRow" ng-show="tableAmount>=1">
+            <div class="seatingRow" ng-show="tableAmount>1">
                 <h4 class="seatTitle">Table 2</h4>
-                <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '2' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
-
+                <ul>
+                    <li class="container" ng-repeat="company in companies | filter: { table: '2' } | orderBy: 'seat'"><span class="transText"><span class="tableNo">{{company.seat}}</span> {{company.name}}</span>
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
@@ -273,10 +269,10 @@
                         </div></li>
                 </ul>
             </div>
-            <div class="seatingRow" ng-show="tableAmount>=2">
+            <div class="seatingRow" ng-show="tableAmount>2">
                 <h4 class="seatTitle">Table 3</h4>
-                <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '3' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
+                <ul>
+                    <li class="container" ng-repeat="company in companies | filter: { table: '3' } | orderBy: 'seat'"><span class="transText"><span class="tableNo">{{company.seat}}</span> {{company.name}}</span>
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
@@ -284,16 +280,15 @@
                         </div></li>
                 </ul>
             </div>
-            <div class="seatingRow" ng-show="tableAmount>=3">
+            <div class="seatingRow" ng-show="tableAmount>3">
                 <h4 class="seatTitle">Table 4</h4>
-                <ul >
-                    <li class="container" ng-repeat="company in companies | filter: { table: '4' } | orderBy: 'seat'"><span class="tableNo">{{company.seat}}</span> {{company.name}}
+                <ul>
+                    <li class="container" ng-repeat="company in companies | filter: { table: '4' } | orderBy: 'seat'"><span class="transText"><span class="tableNo">{{company.seat}}</span> {{company.name}}</span>
                         <div class="textbox">
                             <input type="image" src="css/Images/fileclose.png" name="saveForm" class="delBtn" ng-click="removeRow(company.name)" />
                             <input type="image" src="css/Images/rebuy.png" name="saveForm" class="rebuyBtn" ng-click="rebuyPlayer(company.name)" />
                             <input type="image" src="css/Images/rebuystaff.png" name="saveForm" class="reStaffBtn" ng-click="reStaffPlayer(company.name)" />
                         </div></li>
-
                 </ul>
             </div>
 
@@ -334,20 +329,20 @@
     <div id="right-info" class="info-overlap">
         <div class="prizeinfo">
             <span id="prizesheading">PRIZES</span><br>
-            <span class="prizesmall">1st Place: {{ firstPlace }}€</span><br>
-            <span class="prize">2nd Place: {{secondPlace }}€</span><br>
-            <span class="prize">3rd Place: {{ thirdPlace }}€</span><br>
-            <span class="prize" ng-show="fourthPlace != 0">4th Place: {{ fourthPlace }}€</span><br>
-            <span class="prize" ng-show="fifthPlace != 0">5th Place: {{ fifthPlace }}€</span><br>
+            <span class="prize">1st Place: {{ firstPlace }} €</span><br>
+            <span class="prize">2nd Place: {{secondPlace }} €</span><br>
+            <span class="prize">3rd Place: {{ thirdPlace }} €</span><br>
+            <span class="prize" ng-show="fourthPlace != 0">4th Place: {{ fourthPlace }} €</span><br>
+            <span class="prize" ng-show="fifthPlace != 0">5th Place: {{ fifthPlace }} €</span><br>
         </div>
     </div>
 
-
+<br><br>
     <div class="middle">
-        <img class="btnPic" id="playBtn" src="css/Images/play.png" ng-click="startTournament()">
+        <img class="btnPic playBtn" id="playBtn" src="css/Images/play.png" ng-click="startTournament()">
         <img class="btnPic" id="pauseBtn" src="css/Images/pause.png" ng-click="pauseTournament()">
         <br>
-        <button class="reset" ng-click="resetTournament()">Reset Tournament</button>
+       <!-- <button class="reset" ng-click="resetTournament()">Reset Tournament</button> -->
     </div>
 
 

@@ -11,310 +11,6 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             'table': '2',
             'seat': '3',
             'seated': false
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'Aeter Deier',
-            'paid': true,
-            'staff': true,
-            'table': '3',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'Deter Ceier',
-            'paid': false,
-            'staff': true,
-            'table': '1',
-            'seat': '3',
-            'seated': false
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
-        },
-        {
-            'name': 'FEST',
-            'paid': true,
-            'staff': true,
-            'table': '1',
-            'seat': '2',
-            'seated': true
         }
     ];
 
@@ -327,9 +23,9 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.staffAmount = localStorage.staffCount;
     $scope.numberRound = 1;
     $scope.tName = null;
-    $scope.startingStack = 6000;
-    $scope.staffStack = 2000;
-    $scope.entryFee = 110;
+    $scope.startingStack = null;
+    $scope.staffStack = null;
+    $scope.entryFee = null;
     $scope.amountR = null;
     $scope.stackR = null;
     $scope.amountA = null;
@@ -396,29 +92,29 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             small: 20,
             big: 40,
             ante: 0,
-            length: 2
+            length: 1200
         },
         {
             small: 40,
             big: 80,
             ante:0,
-            length: 2
+            length: 1200
         },
         {
             small: 60,
             big: 120,
-            ante: 200,
-            length: 3
+            ante: 0,
+            length: 1200
         },
         {
             break: true,
-            length: 5
+            length: 480
         },
         {
             small: 100,
             big: 200,
-            ante: 200,
-            length: 10
+            ante: 0,
+            length: 1200
         },
         {
             break: true,
@@ -463,6 +159,18 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
             $scope.tRebuy = false;
         }
 
+        $("#modal-four").ready(function() {
+            jQuery("ul li").hover(function() {
+                $(".transText", this).css("opacity", "0");
+                $(".textbox", this).css("opacity", "1");
+            });
+
+            $("ul li").mouseleave(function () {
+                $(".transText", this).css("opacity", "1");
+                $(".textbox", this).css("opacity", "0");
+            });
+        });
+
         $scope.playersIn = $scope.companies.length;
         $scope.staffChips = $scope.staffAmount * $scope.staffStack;
         $scope.chipCount = ($scope.entries * $scope.startingStack) + $scope.staffChips;
@@ -498,8 +206,22 @@ BlindTimer.controller("TimerController", ['$scope', '$timeout', '$interval', fun
     $scope.breakIt = "00:00";
     $scope.elapsedTime = "00:00";
     var firstStart = false;
+    var pp = false
 
-
+   /* document.addEventListener('keyup', function(e) {
+        if (e.keyCode == 32 && pp==false) {
+            $scope.startTournament();
+            $("#playBtn").hide();
+            $("#pauseBtn").show();
+            pp = true;
+        } else if(e.keyCode == 32 && pp==true){
+            $scope.pauseTournament();
+            $("#pauseBtn").hide();
+            $("#playBtn").show();
+            pp = false;
+        }
+    });
+*/
     $scope.startTournament = function () {
         blindtimer = $interval($scope.onTimeout, 1000);
         if(firstStart!=true){

@@ -79,23 +79,23 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-  $("#playBtn").click(function() {
-    $("#playBtn").toggleClass("opacUp");
-    if( $("#pauseBtn").hasClass("opacUp")){
-      $("#pauseBtn").toggleClass("opacUp");
-    }
-  });
+  $("#mySidenav").mouseleave(function () {
+    $("#mySidenav").css("width", "0");
+  })
 });
 
 $(document).ready(function() {
-  $("#pauseBtn").click(function() {
-    $("#pauseBtn").toggleClass("opacUp");
-    if(  $("#playBtn").hasClass("opacUp")){
-      $("#playBtn").toggleClass("opacUp");
-    }
+  $("#playBtn").click(function() {
+    $("#playBtn").hide();
+    $("#pauseBtn").show();
+  });
 
+  $("#pauseBtn").click(function() {
+    $("#pauseBtn").hide();
+    $("#playBtn").show();
   });
 });
+
 
 function modalClose() {
   if (location.hash == '#modal-one' || '#modal-two' || '#modal-three' || '#modal-four') {
@@ -108,6 +108,8 @@ document.addEventListener('keyup', function(e) {
     modalClose();
   }
 });
+
+
 
 window.onload=function() {
   var modal = document.querySelector('#modal-one');
@@ -142,5 +144,7 @@ window.onload=function() {
     e.stopPropagation();
   }, false);
 
-}
+};
+
+
 

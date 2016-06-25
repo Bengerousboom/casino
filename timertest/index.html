@@ -96,28 +96,28 @@
         <div class="modal-body">
             <form class="form-inline" role="form" ng-submit="addBlind()">
                 <div class="form-group">
+                    <div class="checkbox" id="checkPause">
+                        <label class="switch switch-light">
+                            <input class="switch-input" type="checkbox" ng-model="breakbool" />
+                            <span class="switch-label" data-on="Break" data-off="Break"></span>
+                            <span class="switch-handle"></span>
+                        </label>
+                        <!-- <label><input type="checkbox" style="padding-top: 5px;"value="" ng-model="breakbool">Pause?</label> -->
+                    </div>
+                    <div class="blindtable">
+                        <input type="text" class="inputBlinds inputmiddle" placeholder="Length" value="" ng-model="length">
+                    </div>
 
                     <div class="col-md-4">
-                        <input type="text" class="inputBlinds inputmiddle" name="small" placeholder="Small Blind"
+                        <input type="text" class="inputBlinds inputmiddle" id="sbPad" name="small" placeholder="Small Blind"
                                ng-model="small"/>
                     </div>
                     <div class="blindtable">
                         <input type="text" class="inputBlinds inputmiddle" placeholder="Big Blind" value="" ng-model="big"></label>
                     </div>
                     <div class="blindtable">
-                    <input type="text" class="inputBlinds inputshort" placeholder="Ante" value="" ng-model="ante">
+                    <input type="text" class="inputBlinds inputmiddle" placeholder="Ante" value="" ng-model="ante">
                 </div>
-                    <div class="blindtable">
-                        <input type="text" class="inputBlinds inputmiddle" placeholder="Length" value="" ng-model="length">
-                    </div>
-                    <div class="checkbox" id="checkPause">
-                        <label><input type="checkbox" style="padding-top: 5px;"value="" ng-model="breakbool">Pause?</label>
-                    </div>
-                    <div class="form-group">
-                        <div style="padding-left:20px">
-                            <input type="submit" value="Bestätigen" class="btn btn-primary"/>
-                        </div>
-                    </div>
                 </div>
 
 
@@ -128,26 +128,26 @@
 
         <table class="tableSection">
             <tr>
+                <th>Length</a>
+                </th>
                 <th>Small Blind</a>
                 </th>
                 <th>Big Blind
                 </th>
                 <th>Ante
                 </th>
-                <th>Length</a>
-                </th>
                 <th>
                     Entfernen
                 </th>
             </tr>
             <tr ng-repeat="level in levels  | filter: searchKeyword | orderBy:orderByField:reverseSort">
+                <td><input type="text" class="inputtable" ng-model="level.length" value="{{ level.length }}">
+                </td>
                 <td><input type="text" class="inputtable" ng-model="level.small" value="{{ level.small }}">
                 </td>
                 <td><input type="text" class="inputtable" ng-model="level.big" value="{{ level.big }}">
                 </td>
                 <td><input type="text" class="inputtable" ng-model="level.ante" value="{{ level.ante }}">
-                </td>
-                <td><input type="text" class="inputtable" ng-model="level.length" value="{{ level.length }}">
                 </td>
                 <td>
                     <input type="button" value="Remove" class="removeBtn" ng-click="removeLevel(level.small)"/>
@@ -171,16 +171,24 @@
         <div class="modal-body">
             <form class="form-inline" role="form" ng-submit="addRow()">
                 <div class="form-group">
-                    <label class="labelname">Name</label>
+
                     <div class="col-md-4">
-                        <input type="text" class="inputround" name="name"
+                        <input type="text" class="inputround" name="name" placeholder="Name"
                                ng-model="name"/>
                     </div>
-                    <div class="checkbox">
-                        <label><input type="checkbox" value="" ng-model="paid"><br>Bezahlt</label>
+                    <div class="checkbox" style="margin-left:30px">
+                        <label class="switch-player switch-light-player">
+                            <input class="switch-input-player" type="checkbox" ng-model="paid" />
+                            <span class="switch-label-player" data-on="Paid" data-off="Paid"></span>
+                            <span class="switch-handle-player"></span>
+                        </label>
                     </div>
                     <div class="checkbox">
-                        <label><input type="checkbox" value="" ng-model="staff"><br>Staff-Bonus</label>
+                        <label class="switch-player switch-light-player">
+                            <input class="switch-input-player" type="checkbox" ng-model="staff" />
+                            <span class="switch-label-player" data-on="Staff-Bonus" data-off="Staff-Bonus"></span>
+                            <span class="switch-handle-player"></span>
+                        </label>
                     </div>
                  <!--   <div class="form-group">
                         <div style="padding-left:20px">
@@ -206,7 +214,7 @@
                 <th><a href="" ng-click="orderByField='table'; reverseSort = !reverseSort">Seat</a>
                 </th>
                 <th>
-                    Entfernen
+                    Remove
                 </th>
             </tr>
             <tr ng-repeat="company in companies  | filter: searchKeyword | orderBy:orderByField:reverseSort">
